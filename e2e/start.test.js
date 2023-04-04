@@ -14,14 +14,15 @@ describe("page start", () => {
     server = fork(`${__dirname}/e2e.server.js`);
 
     //открыть браузер
-    browser = await puppeteer.launch({
-      headless: false,
-      slowMo: 150,
-      devtools: true,
-      env: {
-        DISPLAY: ":10.0",
-      },
-    });
+    browser = await puppeteer.launch();
+    // browser = await puppeteer.launch({
+    //   headless: false,
+    //   slowMo: 150,
+    //   devtools: true,
+    //   env: {
+    //     DISPLAY: ":10.0",
+    //   },
+    // });
 
     //просим браузер открыть новую страницу
     page = await browser.newPage();
