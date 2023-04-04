@@ -16,8 +16,11 @@ describe("page start", () => {
     //открыть браузер
     browser = await puppeteer.launch({
       headless: false,
-      slowMo: 100,
+      slowMo: 150,
       devtools: true,
+      env: {
+        DISPLAY: ":10.0",
+      },
     });
 
     //просим браузер открыть новую страницу
